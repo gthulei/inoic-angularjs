@@ -1,0 +1,17 @@
+<ion-view view-title="大房东" id="login_view">
+  <ion-content class="padding">
+    <div class="login-bg"></div>
+    <ion-list class="list padding">
+      <div class="item item-input no-margin">
+        <span class="input-label">手机</span>
+        <input type="tel" placeholder="请填写手机号" maxlength="11" ng-model="login.mobile">
+      </div>
+      <div class="item item-input no-margin">
+        <span class="input-label">验证码</span>
+        <input type="tel" placeholder="请填写验证码" maxlength="4" ng-model="login.msgCode">
+        <button class="btn" id="btn" ng-click="login.getMsg();" ng-class="{'activates':login.timeCount!=60}">获取验证码</button>
+      </div>
+      <button class="button button-block button-positive" ng-click="login.submit()">登录</button>
+    </ion-list>
+  </ion-content>
+</ion-view>

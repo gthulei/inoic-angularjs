@@ -1,0 +1,36 @@
+<ion-view view-title="公证" id="ndetail_view">
+  <ion-content>
+    <div class="bar relative">
+      <i>({{ndetail.user.real_name}})</i>
+    </div>
+    <ion-list>
+      <ion-item class="margin-top no-padding item">
+        <p><i class="icon ion-iphone"></i>{{ndetail.user.mobile_num}}</p>
+        <p ng-repeat="item in ndetail.user.assurance track by $index"><i class="icon ion-person"></i>共借人 {{item.assurance_realname}} {{item.assurance_mobile}}</p>
+        <p><i class="icon ion-address"></i>{{ndetail.user.cur_addr}}</p>
+        <p class="b4"><i class="icon ion-man"></i>销售&nbsp;{{ndetail.user.sale_name}}&nbsp;&nbsp;&nbsp;&nbsp;审批人&nbsp;&nbsp;{{ndetail.user.approval_name}}</p>
+      </ion-item>
+    </ion-list>
+    <ion-list class="list padding">
+      <div class="items item-input no-margin">
+        <span class="input-label">公证老师</span>
+        <input type="text" placeholder="请填写公证老师" ng-model="ndetail.teacher">
+      </div>
+      <div class="items item-input no-margin">
+        <span class="input-label">出公证书时间{{ndetail.time}}</span>
+        <input type="date" placeholder="请填写时间" id="data">
+      </div>
+      <div class="bf dbl-padding-top dbl-padding-bottom">
+        <textarea placeholder="请备注未完成部分及需要交接事宜" class="margin-bottom padding" ng-model="ndetail.remark">
+        </textarea>
+      </div>
+    </ion-list>
+    <div class="bf time">
+      <p class=padding-left>提交时间:{{ndetail.sbminitTime | date:'yyyy-MM-dd HH:mm:ss'}}</p>
+      <hr>
+      <div class="padding">
+        <button class="button button-block sbminit" ng-click="ndetail.t()">提交</button>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

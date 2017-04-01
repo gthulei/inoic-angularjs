@@ -1,0 +1,18 @@
+<ion-view view-title="大房东" id="main_view"  cache-view="false">
+  <ion-content>
+    <div class="no-padding no-margin">
+      <a class="col col-50 no-padding no-border" href="#/home" ng-if="main.id == 3 || main.id == 4" ng-class="{'r-border': main.id == 3 || main.id == 4 }">
+        <i class="ion-main "></i>看房
+      </a>
+      <a class="col col-50 no-padding " href="#/sign " ng-if="main.id==5 || main.id==6 " ng-class="{'r-border': main.id==5 || main.id==6 }">
+        <i class="ion-mainb "></i> 签约
+      </a>
+      <a class="col col-50 no-padding no-border " href="#/notary " ng-if="main.id==5 || main.id==6 ">
+        <i class="ion-mainc "></i> 公证
+      </a>
+      <a class="col col-50 no-padding " href="#/mortgage " ng-if="main.id==5 || main.id==6 " ng-class="{'r-border': main.id==5 || main.id==6}">
+        <i class="ion-maind "></i> 抵押
+      </a>
+    </div>
+  </ion-content>
+</ion-view>

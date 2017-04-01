@@ -1,0 +1,67 @@
+#notary_view {
+  background: #f3f3f3;
+  color: #3c3c3c;
+  nav {
+    background: #fff;
+    height: 40px;
+  }
+  .activation {
+    border-bottom: 2px solid #e69915;
+    color: #e69915;
+  }
+  h3 {
+    border-left: 5px solid #e59915;
+    padding-left: 12px;
+    margin: 5px 0 10px 0;
+  }
+  .green {
+    border-left: 5px solid #54cf98;
+  }
+  .items {
+    padding: 10px 0!important;
+    border: 0 !important;
+    p {
+      padding: 2px 16px;
+      margin-bottom: 8px;
+    }
+  }
+  .b4 {
+    color: #b4b4b4;
+  }
+  .ion-iphone {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background: url($img-path + "iphone.png") no-repeat;
+    background-size: 100% 100%;
+    vertical-align: middle;
+  }
+  .ion-address {
+    @extend .ion-iphone;
+    background: url($img-path + "address.png") no-repeat;
+    background-size: 100% 100%;
+  }
+  .ion-man {
+    @extend .ion-iphone;
+    background: url($img-path + "man.png") no-repeat;
+    background-size: 100% 100%;
+  }
+  .item {
+    padding: 0;
+    border: 0 !important;
+  }
+  .list-inset{
+    margin: 10px;
+    border-radius: 3px;
+  }
+  .ion-search{
+    @extend .ion-iphone;
+    background: url($img-path + "ion-search.png") no-repeat;
+    background-size: 100% 100%;
+  }
+  .ion-close{
+    @extend .ion-iphone;
+    background: url($img-path + "close.png") no-repeat;
+    background-size: 100% 100%;
+  }
+}

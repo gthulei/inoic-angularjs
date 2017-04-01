@@ -1,0 +1,32 @@
+<ion-view view-title="签约" id="sdetail_view">
+  <ion-content>
+    <div class="bar relative">
+      <i>({{sdetail.user.real_name}})</i>
+    </div>
+    <ion-list>
+      <ion-item class="margin-top no-padding item">
+        <p><i class="icon ion-iphone"></i>{{sdetail.user.mobile_num}}</p>
+        <p ng-repeat="item in sdetail.user.assurance track by $index"><i class="icon ion-person"></i>共借人 {{item.assurance_realname}} {{item.assurance_mobile}}</p>
+        <p><i class="icon ion-address"></i>{{sdetail.user.cur_addr}}</p>
+        <p class="b4"><i class="icon ion-man"></i>销售&nbsp;{{sdetail.user.sale_name}}&nbsp;&nbsp;&nbsp;&nbsp;审批人&nbsp;&nbsp;{{sdetail.user.approval_name}}</p>
+      </ion-item>
+    </ion-list>
+    <up-files title="批复单" type="0" uptype="130" datas="sdetail.datas.photoType130" userid="sdetail.userId" bpid="sdetail.bpid" hxtype="1"></up-files>
+    <up-files title="身份证复印件" type="0" uptype="1" datas="sdetail.datas.photoType1" userid="sdetail.userId" bpid="sdetail.bpid" hxtype="1"></up-files>
+    <up-files title="借款人户口簿全页" type="0" uptype="138" datas="sdetail.datas.photoType138" userid="sdetail.userId" bpid="sdetail.bpid" hxtype="1"></up-files>
+    <up-files title="结婚证/离婚证" type="0" uptype="131" datas="sdetail.datas.photoType131" userid="sdetail.userId" bpid="sdetail.bpid" hxtype="1"></up-files>
+    <up-files title="结婚/离婚协议" type="0" uptype="132" datas="sdetail.datas.photoType132" userid="sdetail.userId" bpid="sdetail.bpid" hxtype="1"></up-files>
+    <up-files title="产调" type="0" uptype="133" datas="sdetail.datas.photoType133" userid="sdetail.userId" bpid="sdetail.bpid" hxtype="1"></up-files>
+    <up-files title="房产证" type="0" uptype="40" datas="sdetail.datas.photoType40" userid="sdetail.userId" bpid="sdetail.bpid" hxtype="1"></up-files>
+    <div class="tarea margin-top dbl-padding-top">
+      <h3 class="addr-ion margin-bottom">备注</h3>
+      <textarea placeholder="请备注未完成部分及需要交接事宜" class="padding" ng-model="sdetail.des" ng-focus="sdetail.remark()"></textarea>
+      <div class="row padding-left padding-right">
+        <button class="button button-block sbminit" ng-click="sdetail.sbminit()" ng-if="sdetail.isRemark">提交</button>
+      </div>
+    </div>
+    <div class="time margin-top">
+      <p>提交时间:{{sdetail.time | date:'yyyy-MM-dd HH:mm:ss'}}</p>
+    </div>
+  </ion-content>
+</ion-view>

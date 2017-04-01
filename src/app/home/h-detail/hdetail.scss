@@ -1,0 +1,106 @@
+#hdetail_view {
+  background: #f3f3f3;
+  .bar {
+    height: 50px;
+    line-height: 40px;
+    background: #e59915;
+    color: #fff;
+    text-align: center;
+    i {
+      min-width: 20px;
+      height: 36px;
+      display: inline-block;
+      background: url($img-path + "head.png") no-repeat left center;
+      background-size: 36px 36px;
+      padding-left: 40px;
+      left: 50%;
+      position: absolute;
+      transform: translateX(-50%);
+      text-align: center;
+      -webkit-transform: translateX(-50%);
+      -omz-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      -o-transform: translateX(-50%);
+    }
+  }
+  .time {
+    height: 60px;
+    line-height: 60px;
+    background: #fff;
+    text-align: center;
+  }
+  .addr-ion {
+    height: 20px;
+    line-height: 20px;
+    color: #4d4d4d;
+    font-size: 14px;
+    background: url(../assets/images/wd.png) no-repeat left center;
+    background-size: 17px 20px;
+    padding-left: 20px;
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -omz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+  }
+  .map {
+    padding: 20px 10px;
+    background: #fff;
+    i {
+      width: 85px;
+      height: 85px;
+      background: url(../assets/images/addr.png) no-repeat;
+      background-size: 100% 100%;
+      display: block;
+      margin: 0 auto;
+    }
+    div {
+      border: 1px solid #d8d8d8;
+      position: relative;
+    }
+    .close {
+      width: 20px;
+      height: 20px;
+      background: rgba(0, 0, 0, .5);
+      border-radius: 50%;
+      margin: -12px 0 0 -10px;
+      font-size: 15px;
+      position: absolute;
+      right: -10px;
+      color: #fff;
+      text-align: center;
+      line-height: 16px;
+    }
+    .addr {
+      height: 30px;
+      line-height: 30px;
+      background-color: #fcfcfc;
+      text-align: center;
+      color: #4d4d4d;
+    }
+    .sbminit {
+      background: #e59915;
+      color: #fff;
+      border: 0;
+    }
+  }
+  textarea {
+    width: 95%;
+    height: 90px;
+    margin: 0px auto 0;
+    background-color: #fdfdfd;
+    border: 1px solid #d8d8d8;
+    resize: none;
+  }
+  .tarea {
+    background: #fff;
+  }
+  .sbminit {
+    background: #e59915;
+    color: #fff;
+    border: 0;
+  }
+}

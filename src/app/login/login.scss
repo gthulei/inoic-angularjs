@@ -1,0 +1,50 @@
+#login_view {
+  .login-bg {
+    height: 200px;
+    background: url($img-path + "login.png") no-repeat center center;
+    background-size: 91px 108px;
+  }
+  .item {
+    border: 0;
+    border-bottom: 1px solid #d8d8d8;
+    padding: 20px 0 0px 0;
+    position: relative;
+    span {
+      color: #4d4d4d;
+      width: 20%;
+      padding: 0;
+    }
+    input {
+      color: #4d4d4d;
+    }
+    .btn {
+      right: 0;
+      outline: 0;
+      border: 0;
+      background: #fff;
+      border-left: 1px solid #ccc;
+      color: #e59915;
+      width: 90px;
+      top: 50%;
+      position: absolute;
+      transform: translateY(-50%);
+      text-align: center;
+      -webkit-transform: translateY(-50%);
+      -omz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+    }
+  }
+  .button {
+    min-height: 30 !important;
+    line-height: 30px;
+    background: #e59915;
+    border: 0;
+    outline: none;
+    z-index: 10;
+    margin-top: 40px;
+  }
+  .activates {
+    color: #666 !important;
+  }
+}

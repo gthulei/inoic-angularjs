@@ -1,0 +1,47 @@
+<ion-view view-title="看房详情" id="hdetail_view">
+  <ion-content>
+    <div class="bar relative">
+      <i>({{hdetail.user.real_name}})</i>
+    </div>
+    <up-files title="借款申请表" type="0" uptype="100" datas="hdetail.datas.photoType100" userid="hdetail.userId" bpid="hdetail.bpid" hxtype="4"></up-files>
+    <div class="tarea margin-top dbl-padding-top">
+      <h3 class="addr-ion dbl-margin-bottom">口述风控报告</h3>
+      <textarea placeholder="口述风控报告" class="padding" ng-model="hdetail.des" ng-focus="hdetail.report()"></textarea>
+      <div class="row padding-left padding-right">
+        <button class="button button-block sbminit" ng-click="hdetail.sbminit()" ng-if="hdetail.isReport">提交</button>
+      </div>
+    </div>
+    <up-files title="抵押房产证全页" type="0" uptype="102" datas="hdetail.datas.photoType102" userid="hdetail.userId" bpid="hdetail.bpid" hxtype="4"></up-files>
+    <up-files title="抵押房产调全页" type="0" uptype="103" datas="hdetail.datas.photoType103" userid="hdetail.userId" bpid="hdetail.bpid" hxtype="4"></up-files>
+    <up-files title="共同借款人身份证正反面" type="0" uptype="104" datas="hdetail.datas.photoType104" userid="hdetail.userId" bpid="hdetail.bpid" hxtype="4"></up-files>
+    <up-files title="借款人户口簿全页" type="0" uptype="105" datas="hdetail.datas.photoType105" userid="hdetail.userId" bpid="hdetail.bpid" hxtype="4"></up-files>
+    <up-files title="借款人征信报告全页" type="0" uptype="106" datas="hdetail.datas.photoType106" userid="hdetail.userId" bpid="hdetail.bpid" hxtype="4"></up-files>
+    <up-files title="其他资料" type="0" uptype="107" datas="hdetail.datas.photoType107" userid="hdetail.userId" bpid="hdetail.bpid" hxtype="4"></up-files>
+    <up-files title="现场照片" type="0" uptype="108" datas="hdetail.datas.photoType108" userid="hdetail.userId" bpid="hdetail.bpid" hxtype="4"></up-files>
+    <!-- <up-files title="现场视频" type="3" uptype="109"></up-files> -->
+    <div class="map margin-top">
+      <h3 class="addr-ion dbl-margin-bottom">位置</h3>
+      <i ng-show="!hdetail.flag" ng-click="hdetail.map()"></i>
+      <div ng-show="hdetail.flag">
+        <b class="close" ng-click="hdetail.close()">x</b>
+        <p class="addr no-margin">正在定位请稍后...</p>
+        <iframe id="geoPage" width="0" height="0" frameborder=0 scrolling="no" src="https://apis.map.qq.com/tools/geolocation?key=OB4BZ-D4W3U-B7VVO-4PJWW-6TKDJ-WPB77&referer=myapp&effect=zoom" style="display: none;"></iframe>
+        <iframe id="markPage" width="100%" height="200px" frameborder=0 scrolling="no" src=""></iframe>
+        <div class="padding">
+          <button class="button button-block sbminit" ng-click="hdetail.sbminit()" id="addrs">提交</button>
+        </div>
+      </div>
+    </div>
+    <!--<up-files title="看房备注" type="1" placeholder="请备注未完成部分及需要交接事宜" uptype="109"  describe="hdetail.datas.dlaRow.visit_risk_report"  userid="hdetail.userId" bpid="hdetail.bpid" hxtype="4"></up-files>-->
+    <div class="tarea margin-top dbl-padding-top">
+      <h3 class="addr-ion dbl-margin-bottom">看房备注</h3>
+      <textarea placeholder="请备注未完成部分及需要交接事宜" class="padding" ng-model="hdetail.remark" ng-focus="hdetail.remarks()"></textarea>
+      <div class="row padding-left padding-right">
+        <button class="button button-block sbminit" ng-click="hdetail.sbminit()" ng-if="hdetail.isRemark">提交</button>
+      </div>
+    </div>
+    <div class="time margin-top">
+      <p>提交时间:{{hdetail.time | date:'yyyy-MM-dd HH:mm:ss'}}</p>
+    </div>
+  </ion-content>
+</ion-view>

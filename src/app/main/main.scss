@@ -1,0 +1,45 @@
+#main_view {
+  div {
+    overflow: hidden;
+  }
+  .col {
+    height: 195px;
+    border-bottom: 1px solid #d8d8d8;
+  }
+  a {
+    text-decoration: none;
+    text-align: center;
+    font-size: 18px;
+    color: #4d4d4d;
+    float: left;
+  }
+  .no-border {
+    border-left: 0;
+  }
+  .ion-main {
+    width: 54px;
+    height: 54px;
+    display: block;
+    background: url($img-path + "group-2x.png") no-repeat;
+    background-size: 100% 100%;
+    margin: 46px auto 30px;
+  }
+  .ion-mainb {
+    @extend .ion-main;
+    background: url($img-path + "group_2-2x.png") no-repeat;
+    background-size: 100% 100%;
+  }
+  .ion-mainc {
+    @extend .ion-main;
+    background: url($img-path + "group_4-2x.png") no-repeat;
+    background-size: 100% 100%;
+  }
+  .ion-maind {
+    @extend .ion-main;
+    background: url($img-path + "page_1-2x.png") no-repeat;
+    background-size: 100% 100%;
+  }
+  .r-border {
+    border-right: 1px solid #d8d8d8;
+  }
+}

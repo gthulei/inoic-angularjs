@@ -1,0 +1,34 @@
+<ion-view view-title="抵押" id="mortgage_view" cache-view="false">
+  <ion-content>
+    <ion-refresher spinner="bubbles" pulling-icon="ion-ios-arrow-thin-down" pulling-text="下拉刷新"
+                   on-refresh="mortgage.doRefresh()">
+    </ion-refresher>
+    <div class="list list-inset">
+      <label class="item item-input">
+        <i class="icon ion-search margin-left margin-right"></i>
+        <input type="text" placeholder="请输入姓名" ng-model="search">
+      </label>
+    </div>
+    <nav class="row no-padding">
+      <div class="col col-50 text-center" ng-class="{'activation':mortgage.isClass == 0}" ng-click="mortgage.tab(0)">
+        待抵押({{mortgage.defaultSignCount || 0}})
+      </div>
+      <div class="col col-50 text-center" ng-class="{'activation':mortgage.isClass == 1}" ng-click="mortgage.tab(1)">
+        已抵押({{mortgage.bakSignCount || 0}})
+      </div>
+    </nav>
+    <ion-list>
+      <ion-item class="margin-top no-padding item items" ng-click="mortgage.goBack(item.user_id,item.bp_id,item)"
+                ng-repeat="item in mortgage.items | filter:search track by $index">
+        <h3 ng-class="{'green':mortgage.isClass==1}"><span class="">{{item.real_name}}</span><span
+          class="pull-right dbl-padding-right yellow">{{item.mortgage_assign_time}}</span></h3>
+        <p><i class="icon ion-iphone"></i>{{item.mobile_num}}</p>
+        <p><i class="icon ion-address"></i>{{item.cur_addr}}</p>
+        <p class="b4"><i class="icon ion-man"></i>销售 {{item.sale_name}}</p>
+      </ion-item>
+    </ion-list>
+    <ion-infinite-scroll spinner="bubbles" immediate-check="false" ng-if="mortgage.hasMoreData"
+                         pulling-icon="ion-ios-arrow-thin-down" on-infinite="mortgage.loadMore()" distance="1%">
+    </ion-infinite-scroll>
+  </ion-content>
+</ion-view>

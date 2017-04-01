@@ -1,0 +1,33 @@
+<ion-view view-title="外访看房" id="home_view" cache-view="false">
+  <ion-content>
+    <ion-refresher spinner="bubbles" pulling-icon="ion-ios-arrow-thin-down" pulling-text="下拉刷新"
+                   on-refresh="home.doRefresh()">
+    </ion-refresher>
+    <div class="list list-inset">
+      <label class="item item-input">
+        <i class="icon ion-search margin-left margin-right"></i>
+        <input type="text" placeholder="请输入姓名" ng-model="search">
+      </label>
+    </div>
+    <nav class="row no-padding">
+      <div class="col col-50 text-center" ng-class="{'activation':home.isClass == 0}" ng-click="home.tab(0)">
+        待看房({{home.defaultVisitCount || 0}})
+      </div>
+      <div class="col col-50 text-center" ng-class="{'activation':home.isClass == 1}" ng-click="home.tab(1)">
+        已看房({{home.bakVisitCount || 0}})
+      </div>
+    </nav>
+    <ion-list>
+      <ion-item class="margin-top no-padding item items" ng-click="home.goBack(item.user_id,item.bp_id,item)"
+                ng-repeat="item in home.items | filter:search track by $index">
+        <h3 ng-class="{'green':home.isClass==1}"><span class="">{{item.real_name}}</span></h3>
+        <p><i class="icon ion-iphone"></i>{{item.mobile_num}}</p>
+        <p><i class="icon ion-address"></i>{{item.cur_addr}}</p>
+        <p class="b4"><i class="icon ion-man"></i>销售 {{item.sale_name}}</p>
+      </ion-item>
+    </ion-list>
+    <ion-infinite-scroll spinner="bubbles" immediate-check="false" ng-if="home.hasMoreData"
+                         pulling-icon="ion-ios-arrow-thin-down" on-infinite="home.loadMore()" distance="1%">
+    </ion-infinite-scroll>
+  </ion-content>
+</ion-view>

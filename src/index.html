@@ -1,0 +1,63 @@
+<!doctype html>
+<html ng-app="dfdApp">
+
+<head>
+  <meta charset="utf-8">
+  <title>大房东</title>
+  <meta name="description" content="DFDbank">
+  <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <meta name="format-detection" content="telephone=no">
+  <!-- safari full screen -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta id="apple-mobile-web-app-title" name="apple-mobile-web-app-title" content="大房东">
+  <link rel="apple-touch-icon" href="assets/images/login.png">
+  <link rel="icon" href="assets/images/login.png">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
+  <!-- bower:css -->
+  <!-- run `gulp inject` to automatically populate bower styles dependencies -->
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css({.tmp/serve,src}) styles/app.css -->
+  <!-- inject:css -->
+  <!-- css files will be automatically insert here -->
+  <!-- endinject -->
+  <!-- endbuild -->
+</head>
+
+<body>
+  <ion-nav-bar class="bar-positive" align-title="center">
+    <ion-nav-back-button class="button-clear">
+      <i class="icon ion-ios-arrow-left"></i>
+    </ion-nav-back-button>
+  </ion-nav-bar>
+  <ion-nav-view></ion-nav-view>
+  <script src="sw.controller.js"></script>
+  <script>
+  var standalone = window.navigator.standalone,
+    userAgent = window.navigator.userAgent.toLowerCase(),
+    ios = /iphone|ipod|ipad/.test(userAgent);
+
+  if (/terminal=4/.test(window.location.href) || ios && standalone) {
+    document.querySelector('body').className += ' platform-cordova platform-ios ';
+  }
+
+  /nonobank/.test(location.hostname) && new SwController();
+  </script>
+  <!-- build:js(src) scripts/vendor.js -->
+  <!-- bower:js -->
+  <!-- run `gulp inject` to automatically populate bower script dependencies -->
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:js({.tmp/serve,.tmp/partials,src}) scripts/app.js -->
+  <!-- inject:js -->
+  <!-- js files will be automatically insert here -->
+  <!-- endinject -->
+  <!-- inject:partials -->
+  <!-- angular templates will be automatically converted in js and inserted here -->
+  <!-- endinject -->
+  <!-- endbuild -->
+</body>
+
+</html>

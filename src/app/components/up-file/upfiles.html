@@ -1,0 +1,33 @@
+<div id="uploadfile_view" class="padding-bottom margin-top">
+  <div class="relative dbl-padding-top padding-bottom">
+    <h3>{{title}}</h3>
+  </div>
+  <div ng-if="type==0">
+    <ul class="dbl-padding-left dbl-padding-right margin-top dbl-padding-top">
+      <li ng-repeat="file in datas track by $index" ng-class="{'pull-left':datas!=0}" class="dbl-margin-bottom">
+        <div class="content">
+          <!-- <button ng-click='delete(file.id)'><i>x</i></button> -->
+          <img ng-src="{{file.base64Code}}" alt="" width="85px" height="85px">
+        </div>
+      </li>
+      <li ng-class="{'pull-left':datas!=0}">
+        <div class="resetFile">
+          <input type="file" ng-model="data.file" name="upfiles" base-sixty-four-input multiple accept="image/*, .zip">
+        </div>
+      </li>
+    </ul>
+    <div class="row padding-left padding-right">
+      <button class="button button-block sbminit" ng-show="dfdUpFile.length != 0" ng-click="sbminit({{uptype}},{{userid}},{{hxtype}})">提交</button>
+    </div>
+  </div>
+  <div ng-if="type==3">
+    <input type="text" name="" ng-model="m">
+    <div class="mp4">
+      <input type="file" accept="audio/*,video/*" id="mp4" onchange="angular.element(this).scope().mp4(this)" ; ng-model="m">
+    </div>
+    <div class="row padding-left padding-right">
+      <p class="not p">未选择</p>
+      <button class="button button-block sbminit" id="m" ng-click="sbminit({{uptype}},{{userid}},{{hxtype}})">{{uptype}}提交{{userid}}{{hxtype}}</button>
+    </div>
+  </div>
+</div>

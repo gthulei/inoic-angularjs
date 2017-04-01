@@ -1,0 +1,39 @@
+<ion-view view-title="抵押" id="mdetail_view">
+  <ion-content>
+    <div class="bar relative">
+      <i>({{mdetail.user.real_name}})</i>
+    </div>
+    <ion-list>
+      <ion-item class="margin-top no-padding item">
+        <p><i class="icon ion-iphone"></i>{{mdetail.user.mobile_num}}</p>
+        <p ng-repeat="item in mdetail.user.assurance track by $index"><i class="icon ion-person"></i>共借人 {{item.assurance_realname}} {{item.assurance_mobile}}</p>
+        <p><i class="icon ion-address"></i>{{mdetail.user.cur_addr}}</p>
+        <p class="b4"><i class="icon ion-man"></i>销售&nbsp;{{mdetail.user.sale_name}}&nbsp;&nbsp;&nbsp;&nbsp;审批人&nbsp;&nbsp;{{mdetail.user.approval_name}}</p>
+      </ion-item>
+    </ion-list>
+    <up-files title="抵押收件收据" type="0" uptype="150" datas="mdetail.datas.photoType150" userid="mdetail.userId" bpid="mdetail.bpid" hxtype="3"></up-files>
+    <up-files title="产证密码纸" type="0" uptype="151" datas="mdetail.datas.photoType151" userid="mdetail.userId" bpid="mdetail.bpid" hxtype="3"></up-files>
+    <div class="tarea margin-top dbl-padding-top">
+      <h3 class="addr-ion dbl-margin-bottom">密码</h3>
+      <div class="padding-right padding-left">
+        <input type="password" placeholder="请填写密码" class="padding pass" ng-model="mdetail.p" ng-focus="mdetail.pass()" />
+      </div>
+      <div class="row padding-left padding-right">
+        <button class="button button-block sbminit" ng-click="mdetail.sbminit()" ng-if="mdetail.isPass">提交</button>
+      </div>
+    </div>
+    <up-files title="产证" type="0" uptype="152" datas="mdetail.datas.photoType152" userid="mdetail.userId" bpid="mdetail.bpid" hxtype="3"></up-files>
+    <up-files title="他证" type="0" uptype="153" datas="mdetail.datas.photoType153" userid="mdetail.userId" bpid="mdetail.bpid" hxtype="3"></up-files>
+    <up-files title="注销收件收据" type="0" uptype="154" datas="mdetail.datas.photoType154" userid="mdetail.userId" bpid="mdetail.bpid" hxtype="3"></up-files>
+    <div class="tarea margin-top dbl-padding-top">
+      <h3 class="addr-ion margin-bottom">备注</h3>
+      <textarea placeholder="请备注未完成部分及需要交接事宜" class="padding" ng-model="mdetail.des" ng-focus="mdetail.remark()"></textarea>
+      <div class="row padding-left padding-right">
+        <button class="button button-block sbminit" ng-click="mdetail.sbminit()" ng-if="mdetail.isRemark">提交</button>
+      </div>
+    </div>
+    <div class="time margin-top">
+      <p>提交时间:{{mdetail.time | date:'yyyy-MM-dd HH:mm:ss'}}</p>
+    </div>
+  </ion-content>
+</ion-view>

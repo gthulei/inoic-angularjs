@@ -1,0 +1,101 @@
+  #ndetail_view {
+    background: #f3f3f3;
+    .bar {
+      height: 50px;
+      line-height: 40px;
+      background: #e59915;
+      color: #fff;
+      text-align: center;
+      i {
+        min-width: 20px;
+        height: 36px;
+        display: inline-block;
+        background: url($img-path + "head.png") no-repeat left center;
+        background-size: 36px 36px;
+        padding-left: 40px;
+        left: 50%;
+        position: absolute;
+        transform: translateX(-50%);
+        text-align: center;
+        -webkit-transform: translateX(-50%);
+        -omz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+      }
+    }
+    .item {
+      padding: 10px 0!important;
+      border: 0 !important;
+      p {
+        padding: 2px 16px;
+        margin-bottom: 8px;
+      }
+    }
+    .b4 {
+      color: #b4b4b4;
+    }
+    .ion-iphone {
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      background: url($img-path + "iphone.png") no-repeat;
+      background-size: 100% 100%;
+      vertical-align: middle;
+    }
+    .ion-address {
+      @extend .ion-iphone;
+      background: url($img-path + "address.png") no-repeat;
+      background-size: 100% 100%;
+    }
+    .ion-person {
+      @extend .ion-iphone;
+      background: url($img-path + "person.png") no-repeat;
+      background-size: 100% 100%;
+      margin-top: -5px;
+    }
+    .ion-man {
+      @extend .ion-iphone;
+      background: url($img-path + "man.png") no-repeat;
+      background-size: 100% 100%;
+    }
+    .items {
+      border: 0;
+      border-bottom: 1px solid #d8d8d8;
+      background: #fff;
+      position: relative;
+      span {
+        color: #4d4d4d;
+        width: 25%;
+        padding: 0;
+      }
+      input {
+        color: #4d4d4d;
+      }
+    }
+    textarea {
+      width: 95%;
+      height: 90px;
+      display: block;
+      margin: 0 auto;
+      background-color: #fdfdfd;
+      border: 1px solid #d8d8d8;
+      resize: none;
+    }
+    .bf {
+      background: #fff;
+    }
+    .time {
+      p {
+        height: 50px;
+        line-height: 50px;
+      }
+      hr {
+        border-top: 1px solid #d8d8d8;
+      }
+      .sbminit {
+        background: #e59915;
+        color: #fff;
+        border: 0;
+      }
+    }
+  }
